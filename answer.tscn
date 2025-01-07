@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2255tuvosnj8"]
+
+[ext_resource type="Script" path="res://answer.gd" id="1_lu2yu"]
+[ext_resource type="Texture2D" uid="uid://82kiybr02vpl" path="res://rounded background.png" id="1_lwhmq"]
+[ext_resource type="FontFile" uid="uid://dupe5d0ad8tpr" path="res://LEMONMILK-Regular.otf" id="2_je7g2"]
+
+[node name="Answer" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("1_lwhmq")
+script = ExtResource("1_lu2yu")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 6.0
+offset_right = 1538.0
+offset_bottom = 454.0
+theme_override_fonts/font = ExtResource("2_je7g2")
+theme_override_font_sizes/font_size = 60
+text = "hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true

@@ -1,0 +1,94 @@
+[gd_scene load_steps=9 format=3 uid="uid://dq8avjgdrcrl7"]
+
+[ext_resource type="PackedScene" uid="uid://psm6n1id0mjm" path="res://answer_section.tscn" id="1_uoeek"]
+[ext_resource type="Script" path="res://create.gd" id="1_xtest"]
+[ext_resource type="PackedScene" uid="uid://beaywpcouqqrl" path="res://new_section.tscn" id="3_lejpr"]
+[ext_resource type="FontFile" uid="uid://dupe5d0ad8tpr" path="res://LEMONMILK-Regular.otf" id="4_2hfit"]
+[ext_resource type="Texture2D" uid="uid://dud3vbsylxtmx" path="res://home.png" id="5_6afqh"]
+[ext_resource type="Script" path="res://HomeButton.gd" id="6_yjrfg"]
+[ext_resource type="Texture2D" uid="uid://6mdb3bf3cdu5" path="res://savebutton.png" id="7_vks4w"]
+[ext_resource type="Script" path="res://SaveButton.gd" id="8_cbnsf"]
+
+[node name="Create" type="Node"]
+script = ExtResource("1_xtest")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+offset_left = 242.0
+offset_top = 243.0
+offset_right = 2032.0
+offset_bottom = 1288.0
+scale = Vector2(0.8, 0.8)
+scroll_vertical_custom_step = 40.0
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="AnswerSection" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_uoeek")]
+layout_mode = 2
+
+[node name="NewSection" parent="ScrollContainer/VBoxContainer" instance=ExtResource("3_lejpr")]
+layout_mode = 2
+
+[node name="Menu" type="ColorRect" parent="."]
+offset_left = -8.0
+offset_right = 1939.0
+offset_bottom = 122.0
+color = Color(0.682353, 0.505882, 0, 1)
+
+[node name="Label" type="Label" parent="Menu"]
+layout_mode = 0
+offset_left = 34.0
+offset_right = 714.0
+offset_bottom = 123.0
+theme_override_colors/font_color = Color(0.0862745, 0.0862745, 0.0862745, 1)
+theme_override_fonts/font = ExtResource("4_2hfit")
+theme_override_font_sizes/font_size = 90
+text = "Eye of Tester"
+
+[node name="HomeButton" type="TextureButton" parent="Menu"]
+layout_mode = 0
+offset_left = 1802.0
+offset_top = -4.0
+offset_right = 2314.0
+offset_bottom = 508.0
+scale = Vector2(0.25, 0.25)
+texture_normal = ExtResource("5_6afqh")
+script = ExtResource("6_yjrfg")
+
+[node name="SaveButton" type="TextureButton" parent="Menu"]
+layout_mode = 0
+offset_left = 1644.0
+offset_top = -4.0
+offset_right = 1804.0
+offset_bottom = 156.0
+scale = Vector2(0.85, 0.85)
+texture_normal = ExtResource("7_vks4w")
+stretch_mode = 1
+script = ExtResource("8_cbnsf")
+
+[node name="Title" type="Label" parent="."]
+offset_left = 1.0
+offset_top = 142.0
+offset_right = 1922.0
+offset_bottom = 193.0
+theme_override_colors/font_color = Color(0.682353, 0.505882, 0, 1)
+theme_override_fonts/font = ExtResource("4_2hfit")
+theme_override_font_sizes/font_size = 40
+text = "Title"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 60.0
+autostart = true
+
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/NewSection" to="." method="_on_new_section_pressed"]
+[connection signal="mouse_entered" from="Menu/HomeButton" to="Menu/HomeButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Menu/HomeButton" to="Menu/HomeButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="Menu/HomeButton" to="." method="_on_home_button_pressed"]
+[connection signal="mouse_entered" from="Menu/SaveButton" to="Menu/SaveButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Menu/SaveButton" to="Menu/SaveButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="Menu/SaveButton" to="." method="_on_save_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

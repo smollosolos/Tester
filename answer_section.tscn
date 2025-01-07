@@ -1,0 +1,110 @@
+[gd_scene load_steps=9 format=3 uid="uid://psm6n1id0mjm"]
+
+[ext_resource type="Texture2D" uid="uid://82kiybr02vpl" path="res://rounded background.png" id="1_0yipe"]
+[ext_resource type="FontFile" uid="uid://cqu0uw4yhkhsl" path="res://coolvetica rg.otf" id="1_cfeml"]
+[ext_resource type="Script" path="res://answer_section.gd" id="1_sgr1c"]
+[ext_resource type="FontFile" uid="uid://dupe5d0ad8tpr" path="res://LEMONMILK-Regular.otf" id="2_7uxc1"]
+[ext_resource type="Texture2D" uid="uid://bk6mftdjgkl7c" path="res://deletebutton.png" id="5_nsvhx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hxvot"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yr8ps"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2tajv"]
+
+[node name="Answersection" type="TextureRect"]
+self_modulate = Color(1, 1, 1, 0.623529)
+custom_minimum_size = Vector2(1782, 487)
+anchors_preset = -1
+anchor_right = 0.928
+anchor_bottom = 0.451
+offset_right = 0.23999
+offset_bottom = -0.0800476
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_0yipe")
+script = ExtResource("1_sgr1c")
+
+[node name="Question" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 83.0
+offset_right = 877.0
+offset_bottom = 389.0
+theme_override_colors/background_color = Color(0.101961, 0.101961, 0.101961, 0.564706)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_selected_color = Color(0.682353, 0.505882, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_colors/selection_color = Color(0.0235294, 0.0235294, 0.0235294, 0.980392)
+theme_override_colors/current_line_color = Color(0, 0, 0, 0)
+theme_override_colors/search_result_color = Color(0, 0, 0, 0)
+theme_override_colors/search_result_border_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("1_cfeml")
+theme_override_font_sizes/font_size = 39
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hxvot")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yr8ps")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_2tajv")
+wrap_mode = 1
+caret_blink = true
+
+[node name="Answer" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 911.0
+offset_top = 83.0
+offset_right = 1728.0
+offset_bottom = 389.0
+theme_override_colors/background_color = Color(0.101961, 0.101961, 0.101961, 0.564706)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_selected_color = Color(0.682353, 0.505882, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_colors/selection_color = Color(0.0235294, 0.0235294, 0.0235294, 0.980392)
+theme_override_colors/current_line_color = Color(0, 0, 0, 0)
+theme_override_colors/search_result_color = Color(0, 0, 0, 0)
+theme_override_colors/search_result_border_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("1_cfeml")
+theme_override_font_sizes/font_size = 39
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hxvot")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yr8ps")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_2tajv")
+wrap_mode = 1
+caret_blink = true
+
+[node name="Number" type="Label" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_right = 50.0
+offset_bottom = 81.0
+theme_override_colors/font_color = Color(0.682353, 0.505882, 0, 1)
+theme_override_fonts/font = ExtResource("2_7uxc1")
+theme_override_font_sizes/font_size = 58
+text = "1"
+
+[node name="Questiontext" type="Label" parent="."]
+layout_mode = 0
+offset_left = 342.0
+offset_top = 400.0
+offset_right = 568.0
+offset_bottom = 460.0
+theme_override_colors/font_color = Color(0.682353, 0.505882, 0, 1)
+theme_override_fonts/font = ExtResource("2_7uxc1")
+theme_override_font_sizes/font_size = 42
+text = "question"
+
+[node name="Answertext" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1216.0
+offset_top = 400.0
+offset_right = 1442.0
+offset_bottom = 460.0
+theme_override_colors/font_color = Color(0.682353, 0.505882, 0, 1)
+theme_override_fonts/font = ExtResource("2_7uxc1")
+theme_override_font_sizes/font_size = 42
+text = "answer"
+
+[node name="trashset" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1694.0
+offset_top = 398.0
+offset_right = 2178.0
+offset_bottom = 914.0
+scale = Vector2(0.16, 0.16)
+texture_normal = ExtResource("5_nsvhx")

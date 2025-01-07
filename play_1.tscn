@@ -1,0 +1,111 @@
+[gd_scene load_steps=6 format=3 uid="uid://bs16l87nrnyos"]
+
+[ext_resource type="Script" path="res://play_1.gd" id="1_5vffs"]
+[ext_resource type="FontFile" uid="uid://dupe5d0ad8tpr" path="res://LEMONMILK-Regular.otf" id="1_ke8aa"]
+[ext_resource type="FontFile" uid="uid://cqu0uw4yhkhsl" path="res://coolvetica rg.otf" id="2_rgr3c"]
+[ext_resource type="PackedScene" uid="uid://d2255tuvosnj8" path="res://answer.tscn" id="3_jeh2j"]
+[ext_resource type="Texture2D" uid="uid://dud3vbsylxtmx" path="res://home.png" id="5_2sfvl"]
+
+[node name="Play1" type="Node"]
+script = ExtResource("1_5vffs")
+
+[node name="question number" type="Label" parent="."]
+offset_right = 124.0
+offset_bottom = 129.0
+theme_override_colors/font_color = Color(0.682353, 0.505882, 0, 1)
+theme_override_fonts/font = ExtResource("1_ke8aa")
+theme_override_font_sizes/font_size = 100
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="question" type="TextEdit" parent="."]
+offset_left = 345.0
+offset_top = 14.0
+offset_right = 1756.0
+offset_bottom = 366.0
+theme_override_colors/background_color = Color(0.0313726, 0.0313726, 0.0313726, 1)
+theme_override_colors/font_readonly_color = Color(0.847059, 0.847059, 0.847059, 1)
+theme_override_fonts/font = ExtResource("2_rgr3c")
+theme_override_font_sizes/font_size = 79
+text = "dhasjuihrf89hw8a9ru89w3"
+editable = false
+wrap_mode = 1
+
+[node name="Answer" parent="." instance=ExtResource("3_jeh2j")]
+offset_left = 132.0
+offset_top = 413.0
+offset_right = 172.0
+offset_bottom = 453.0
+
+[node name="Label" parent="Answer" index="0"]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 1534.0
+offset_bottom = 462.0
+
+[node name="Answer2" parent="." instance=ExtResource("3_jeh2j")]
+offset_left = 1012.0
+offset_top = 413.0
+offset_right = 1052.0
+offset_bottom = 453.0
+
+[node name="Label" parent="Answer2" index="0"]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 1520.0
+offset_bottom = 464.0
+
+[node name="Answer3" parent="." instance=ExtResource("3_jeh2j")]
+offset_left = 1012.0
+offset_top = 748.0
+offset_right = 1052.0
+offset_bottom = 788.0
+
+[node name="Label" parent="Answer3" index="0"]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 1520.0
+
+[node name="Answer4" parent="." instance=ExtResource("3_jeh2j")]
+offset_left = 132.0
+offset_top = 748.0
+offset_right = 172.0
+offset_bottom = 788.0
+
+[node name="Label" parent="Answer4" index="0"]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 1524.0
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 1751.0
+offset_top = 15.0
+offset_right = 2263.0
+offset_bottom = 527.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("5_2sfvl")
+
+[node name="results" type="Label" parent="."]
+offset_left = 417.0
+offset_top = 245.0
+offset_right = 1549.0
+offset_bottom = 781.0
+theme_override_colors/font_color = Color(1, 1, 1, 0)
+theme_override_fonts/font = ExtResource("2_rgr3c")
+theme_override_font_sizes/font_size = 70
+text = "blah blah bvij7ygue nwrhv wre7awr ewyh w7e8y"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[connection signal="pressed" from="Answer" to="." method="_on_answer_pressed"]
+[connection signal="pressed" from="Answer2" to="." method="_on_answer_2_pressed"]
+[connection signal="pressed" from="Answer3" to="." method="_on_answer_3_pressed"]
+[connection signal="pressed" from="Answer4" to="." method="_on_answer_4_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+
+[editable path="Answer"]
+[editable path="Answer2"]
+[editable path="Answer3"]
+[editable path="Answer4"]

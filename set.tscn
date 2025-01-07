@@ -1,0 +1,159 @@
+[gd_scene load_steps=9 format=3 uid="uid://b3gil4rv0twis"]
+
+[ext_resource type="Texture2D" uid="uid://82kiybr02vpl" path="res://rounded background.png" id="1_44bjd"]
+[ext_resource type="FontFile" uid="uid://dupe5d0ad8tpr" path="res://LEMONMILK-Regular.otf" id="2_4af4o"]
+[ext_resource type="Script" path="res://set.gd" id="2_uiy14"]
+[ext_resource type="Texture2D" uid="uid://bbdwrtt6n4rmn" path="res://copyicon.png" id="4_piay5"]
+[ext_resource type="FontFile" uid="uid://cqu0uw4yhkhsl" path="res://coolvetica rg.otf" id="5_ocat7"]
+[ext_resource type="Texture2D" uid="uid://bk6mftdjgkl7c" path="res://deletebutton.png" id="6_7b3t8"]
+[ext_resource type="Texture2D" uid="uid://dyv1rsi5epeep" path="res://editbutton.png" id="7_t1ye5"]
+[ext_resource type="Texture2D" uid="uid://c0g2t2vwrbhad" path="res://play.png" id="8_oacqa"]
+
+[node name="Set" type="TextureRect"]
+texture = ExtResource("1_44bjd")
+script = ExtResource("2_uiy14")
+
+[node name="setname" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 7.0
+offset_right = 1537.0
+offset_bottom = 117.0
+theme_override_colors/font_color = Color(0.682353, 0.505882, 0, 1)
+theme_override_fonts/font = ExtResource("2_4af4o")
+theme_override_font_sizes/font_size = 80
+text = "SET NAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="numberofquestions" type="Label" parent="."]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 100.0
+offset_right = 1536.0
+offset_bottom = 183.0
+theme_override_fonts/font = ExtResource("2_4af4o")
+theme_override_font_sizes/font_size = 50
+text = "10 questions"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="copyButton" type="TextureButton" parent="."]
+layout_mode = 2
+offset_left = 399.0
+offset_top = 253.0
+offset_right = 899.0
+offset_bottom = 753.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("4_piay5")
+
+[node name="Label" type="Label" parent="copyButton"]
+visible = false
+layout_mode = 0
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 575.0
+offset_bottom = 38.0
+theme_override_colors/font_color = Color(0.682353, 0.505882, 0, 1)
+theme_override_fonts/font = ExtResource("5_ocat7")
+theme_override_font_sizes/font_size = 80
+text = "Copied to Clipboard"
+
+[node name="deleteButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 615.0
+offset_top = 266.0
+offset_right = 1099.0
+offset_bottom = 782.0
+scale = Vector2(0.33, 0.33)
+texture_normal = ExtResource("6_7b3t8")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(1081, 362)
+scale = Vector2(0.67, 0.67)
+texture = ExtResource("7_t1ye5")
+
+[node name="editbutton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 986.0
+offset_top = 275.0
+offset_right = 1242.0
+offset_bottom = 531.0
+scale = Vector2(0.65, 0.65)
+texture_normal = ExtResource("7_t1ye5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(885, 356)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("8_oacqa")
+
+[node name="playbutton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 808.0
+offset_top = 281.0
+offset_right = 1307.0
+offset_bottom = 781.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("8_oacqa")
+
+[node name="Control" type="Control" parent="playbutton"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+
+[node name="multiplechoicebutton" type="TextureButton" parent="playbutton/Control"]
+modulate = Color(0.592157, 0.592157, 0.592157, 1)
+layout_mode = 0
+offset_left = -827.0
+offset_top = -383.0
+offset_right = 709.0
+offset_bottom = 78.0
+scale = Vector2(0.5, 1.5)
+texture_normal = ExtResource("1_44bjd")
+
+[node name="openansswerbutton2" type="TextureButton" parent="playbutton/Control"]
+modulate = Color(0.592157, 0.592157, 0.592157, 1)
+layout_mode = 0
+offset_left = 47.0
+offset_top = -383.0
+offset_right = 1583.0
+offset_bottom = 78.0
+scale = Vector2(0.5, 1.5)
+texture_normal = ExtResource("1_44bjd")
+
+[node name="Label" type="Label" parent="playbutton/Control"]
+layout_mode = 0
+offset_left = -823.0
+offset_top = -383.0
+offset_right = -54.0
+offset_bottom = 303.0
+theme_override_colors/font_color = Color(0.682353, 0.505882, 0, 1)
+theme_override_fonts/font = ExtResource("2_4af4o")
+theme_override_font_sizes/font_size = 80
+text = "Multiple Choice"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="playbutton/Control"]
+layout_mode = 0
+offset_left = 47.0
+offset_top = -383.0
+offset_right = 816.0
+offset_bottom = 303.0
+theme_override_colors/font_color = Color(0.682353, 0.505882, 0, 1)
+theme_override_fonts/font = ExtResource("2_4af4o")
+theme_override_font_sizes/font_size = 80
+text = "Open Ended"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="copyButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="deleteButton" to="." method="_on_delete_button_pressed"]
+[connection signal="pressed" from="editbutton" to="." method="_on_editbutton_pressed"]
+[connection signal="pressed" from="playbutton" to="." method="_on_playbutton_pressed"]
+[connection signal="pressed" from="playbutton/Control/multiplechoicebutton" to="." method="_on_multiplechoicebutton_pressed"]
+[connection signal="pressed" from="playbutton/Control/openansswerbutton2" to="." method="_on_openansswerbutton_2_pressed"]
